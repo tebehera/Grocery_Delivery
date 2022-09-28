@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+     
+    </div>
+  </div>
+</nav>
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Update cart</div>
+    <div class="content">
+
+      <div class="input-box">
+        <span class="details">CartId</span>
+        <input type="text" required placeholder="cartId"
+      [(ngModel)]="updateCart1.cartId" name="cartId">
+      </div>
+      
+      <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+        <div class="form-floating mb-3">
+          <label for="Name">Name</label>
+
+           <input type="text" class="form-control" id="cartId" [(ngModel)]="updateCart1.Name"
+            name="Name" required maxlength="21" #cardid="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && cardid.invalid }" 
+            [ngModelOptions]="{standalone: true}" placeholder="Enter cardName">
+           <div *ngIf="(cardid.touched||f.submitted )&& cardid.errors?.['required']"
+            class="invalid-feedback">
+
+             Name is required.
+
+             </div>
+
+          
+        </div>
+        <div class="form-floating mb-3">
+          <label for="floatingInput">Price </label>
+
+          <input type="text" class="form-control" id="cartid" [(ngModel)]="updateCart1.price" name="price"
+            required maxlength="21" #cartid="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && cartid.invalid }" [ngModelOptions]="{standalone: true}"
+            placeholder="Enter price">
+          <div *ngIf="(cartid.touched||f.submitted )&& cartid.errors?.['required']" class="invalid-feedback">
+
+            Price is required.
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="floatingInput">quantity </label>
+
+          <input type="text" class="form-control" id="cartid" [(ngModel)]="updateCart1.quantity" name="quantity"
+            required maxlength="21" #cardid="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && cartid.invalid }" [ngModelOptions]="{standalone: true}"
+            placeholder="Enter quantity">
+          <div *ngIf="(cartid.touched||f.submitted )&& cartid.errors?.['required']" class="invalid-feedback">
+
+            Quantity is required.
+          </div>
+        </div>
+        
+        
+        <div class="button">                     
+        <input type="submit" value="Update">
+</div>
+      </form>
+
+    </div>
+
+  </div>

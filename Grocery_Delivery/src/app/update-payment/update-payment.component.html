@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       
+      </div>
+    </div>
+  </nav>
+  <!DOCTYPE html>
+  
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     </head>
+  <body>
+    <div class="container">
+      <div class="title">Update card</div>
+      <div class="content">
+
+        <div class="input-box">
+          <span class="details">PaymentId</span>
+          <input type="text" required placeholder="paymentId"
+        [(ngModel)]="updatePayment1.paymentId" name="paymentId">
+        </div>
+        
+        <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+          <div class="form-floating mb-3">
+            <label for="cardName">cardName</label>
+
+             <input type="text" class="form-control" id="paymentId" [(ngModel)]="updatePayment1.cardName"
+              name="cardName" required maxlength="21" #cardid="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cardid.invalid }" 
+              [ngModelOptions]="{standalone: true}" placeholder="Enter cardName">
+             <div *ngIf="(cardid.touched||f.submitted )&& cardid.errors?.['required']"
+              class="invalid-feedback">
+
+               cardName is required.
+
+               </div>
+
+            
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">cardNumber </label>
+
+            <input type="text" class="form-control" id="paymentid" [(ngModel)]="updatePayment1.cardNumber" name="cardNumber"
+              required maxlength="21" #paymentid="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && paymentid.invalid }" [ngModelOptions]="{standalone: true}"
+              placeholder="Enter cardNumber">
+            <div *ngIf="(paymentid.touched||f.submitted )&& paymentid.errors?.['required']" class="invalid-feedback">
+
+              cardNumber is required.
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">bankName </label>
+
+            <input type="text" class="form-control" id="cardid" [(ngModel)]="updatePayment1.bankName" name="bankName"
+              required maxlength="21" #cardid="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cardid.invalid }" [ngModelOptions]="{standalone: true}"
+              placeholder="Enter cardExpiry">
+            <div *ngIf="(cardid.touched||f.submitted )&& cardid.errors?.['required']" class="invalid-feedback">
+
+              bankName is required.
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">cardExpiry </label>
+
+            <input type="text" class="form-control" id="cardid" [(ngModel)]="updatePayment1.cardExpiry" name="cardExpiry"
+              required maxlength="21" #cardid="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cardid.invalid }" [ngModelOptions]="{standalone: true}"
+              placeholder="Enter cardExpiry">
+            <div *ngIf="(cardid.touched||f.submitted )&& cardid.errors?.['required']" class="invalid-feedback">
+
+              cardExpiry is required.
+            </div>
+          </div>
+
+          <label for="floatingInput">status </label>
+          <input type="text" class="form-control" id="cardid" [(ngModel)]="updatePayment1.status"
+            name="status" required maxlength="21" #cardid="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && cardid.invalid }" [ngModelOptions]="{standalone: true}"
+            placeholder="Enter status">
+          <div *ngIf="(cardid.touched||f.submitted )&& cardid.errors?.['required']" class="invalid-feedback">
+
+                               status is required
+
+                                   </div>
+          <div class="button">                     
+          <input type="submit" value="Update">
+</div>
+        </form>
+
+      </div>
+
+    </div>

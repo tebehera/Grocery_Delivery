@@ -1,0 +1,34 @@
+<!-- <app-navbar></app-navbar> -->
+
+<body>
+    <div class="container" id="main">
+    <h2>PaymentList</h2>
+      <table class="table table-striped" style="width:100%">
+      <thead>
+        <tr>
+  
+          <th> paymentId</th>
+         <th>cardName</th>
+          <th>cardNumber</th>
+          <th>bankName</th>
+          <th>cardExpiry</th>
+          <th>status</th>
+          <tr></tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let s of Payment ">
+            <td>{{s.paymentId }}</td>
+          <td>{{s.cardName }}</td>
+          <td>{{s.cardNumber }}</td>
+          <td>{{s.bankName }}</td>
+          <td>{{s.cardExpiry }}</td>
+          <td>{{s.status }}</td>
+                  
+              <td><br><button class="btn btn-info"  type="button"(click)="update()">Update</button><br></td>
+          <td><br><button class="btn btn-info"  type="button" (click)="delete()">Delete</button><br></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </body>

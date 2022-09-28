@@ -1,0 +1,28 @@
+<body>
+  <div class="container" id="main">
+  <h2>CartList</h2>
+    <table class="table table-striped" style="width:100%">
+    <thead>
+      <tr>
+
+        <th> cartId</th>
+       <th>Name</th>
+        <th>price</th>
+        <th>quantity</th>
+        <tr></tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let s of Cart ">
+          <td>{{s.cartId }}</td>
+        <td>{{s.Name }}</td>
+        <td>{{s.price }}</td>
+        <td>{{s.quantity }}</td>
+                
+            <td><br><button class="btn btn-info"  type="button"(click)="update()">Update</button><br></td>
+        <td><br><button class="btn btn-info"  type="button" (click)="delete()">Delete</button><br></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</body>

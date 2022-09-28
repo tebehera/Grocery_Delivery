@@ -1,0 +1,79 @@
+<body>
+    <div class="container">
+        <div class="col-md-6 offset-md-3">
+            <h3>Add Payment</h3>
+            <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                <div class="form-floating mb-3">
+                    <label for="PaymentName">Card Name</label>
+
+                    <input type="text" class="form-control" id="Paymentid" [(ngModel)]="addPayment1.cardName"
+                        name="cardname" required maxlength="21" #Paymentid="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && Paymentid.invalid }"
+                        [ngModelOptions]="{standalone: true}" placeholder="Enter Card Name">
+                    <div *ngIf="(Paymentid.touched||f.submitted )&& Paymentid.errors?.['required']"
+                        class="invalid-feedback">
+
+                        Card Name is required.
+
+                    </div>
+
+
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="floatingInput">Card Number </label>
+
+                    <input type="text" class="form-control" id="Paymentid" [(ngModel)]="addPayment1.cardNumber"
+                        name="cardnumber" required maxlength="21" #Paymentid="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && Paymentid.invalid }"
+                        [ngModelOptions]="{standalone: true}" placeholder="Enter Card Number">
+                    <div *ngIf="(Paymentid.touched||f.submitted )&& Paymentid.errors?.['required']"
+                        class="invalid-feedback">
+
+                        Card Number is required.
+                    </div>
+                </div>
+
+                <label for="floatingInput">Bank Name </label>
+                <input type="text" class="form-control" id="Paymentid" [(ngModel)]="addPayment1.bankName"
+                    name="bankname" required maxlength="21" #Paymentid="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && Paymentid.invalid }" [ngModelOptions]="{standalone: true}"
+                    placeholder="Enter Bank Name">
+                <div *ngIf="(Paymentid.touched||f.submitted )&& Paymentid.errors?.['required']"
+                    class="invalid-feedback">
+
+                    Bank Name is required
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="PaymentName">Card Expiry </label>
+
+                    <input type="text" class="form-control" id="paymentid" [(ngModel)]="addPayment1.cardExpiry"
+                        name="cardexpiry" required maxlength="21" #paymentid="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && paymentid.invalid }"
+                        [ngModelOptions]="{standalone: true}" placeholder="Enter Card Expiry">
+                    <div *ngIf="(paymentid.touched||f.submitted )&& paymentid.errors?.['required']"
+                        class="invalid-feedback">
+
+                        Card Expiry is required.
+
+                    </div>
+                    <label for="PaymentName">Status </label>
+
+                    <input type="text" class="form-control" id="paymentid" [(ngModel)]="addPayment1.status"
+                        name="status" required maxlength="21" #paymentid="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && paymentid.invalid }"
+                        [ngModelOptions]="{standalone: true}" placeholder="Enter Status">
+                    <div *ngIf="(paymentid.touched||f.submitted )&& paymentid.errors?.['required']"
+                        class="invalid-feedback">
+
+                        Status is required.
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-success" type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</body>

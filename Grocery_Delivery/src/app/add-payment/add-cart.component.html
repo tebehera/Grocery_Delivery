@@ -1,0 +1,94 @@
+<body>
+
+        <div class="container">
+    
+            <div class="col-md-6 offset-md-3">
+    
+                <h3>Add Cart</h3>
+    
+                <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+    
+                    <div class="form-floating mb-3">
+    
+                        <label for="Name">Name</label>
+    
+    
+    
+                        <input type="text" class="form-control" id="Cartid" [(ngModel)]="addCart1.Name"
+    
+                            name="name" required maxlength="21" #Cartid="ngModel"
+    
+                            [ngClass]="{ 'is-invalid': f.submitted && Cartid.invalid }"
+    
+                            [ngModelOptions]="{standalone: true}" placeholder="Enter Name">
+    
+                        <div *ngIf="(Cartid.touched||f.submitted )&& Cartid.errors?.['required']"
+    
+                            class="invalid-feedback">
+    
+    
+    
+                             Name is required.
+    
+    
+    
+                        </div>
+    
+    
+    
+    
+                    </div>
+    
+                    <div class="form-floating mb-3">
+    
+                        <label for="floatingInput">Price </label>
+    
+    
+    
+                        <input type="text" class="form-control" id="Cartid" [(ngModel)]="addCart1.price"
+    
+                            name="price" required maxlength="21" #Cartid="ngModel"
+    
+                            [ngClass]="{ 'is-invalid': f.submitted && Cartid.invalid }"
+    
+                            [ngModelOptions]="{standalone: true}" placeholder="Enter Price">
+    
+                        <div *ngIf="(Cartid.touched||f.submitted )&& Cartid.errors?.['required']"
+    
+                            class="invalid-feedback">
+    
+    
+    
+                            Price is required.
+    
+                        </div>
+    
+                    </div>
+    
+    
+    
+                    <label for="floatingInput">Quantity </label>
+    
+                    <input type="text" class="form-control" id="Cartid" [(ngModel)]="addCart1.quantity"
+    
+                        name="quantity" required maxlength="21" #Cartid="ngModel"
+    
+                        [ngClass]="{ 'is-invalid': f.submitted && Cartid.invalid }" [ngModelOptions]="{standalone: true}"
+    
+                        placeholder="Enter Quantity">
+    
+                    <div *ngIf="(Cartid.touched||f.submitted )&& Cartid.errors?.['required']"
+    
+                        class="invalid-feedback">
+    
+    
+    
+                        Quantity is required
+    
+                    </div>
+    
+                    
+    
+                        
+    
+    <button class="btn btn-success" type="submit">Submit</button>
